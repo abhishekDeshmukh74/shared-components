@@ -6,14 +6,22 @@ export default {
   component: Button,
   argTypes: {
     type: {
+      options: [ButtonType.primary, ButtonType.link],
       description: 'Type of the button',
+      control: { type: 'inline-radio' },
     },
     label: {
       description: 'Label of the button',
     },
+    disabled: {
+      control: 'boolean',
+    },
+    loading: {
+      control: 'boolean',
+    },
     onClick: {
       description: 'on button click handler',
-      action: 'clicked'
+      action: 'clicked',
     },
   },
   parameters: {
@@ -31,10 +39,11 @@ export const Primary = Template.bind({});
 Primary.args = {
   type: ButtonType.primary,
   label: ButtonType.primary,
+  disabled: false,
 };
 
 export const Link = Template.bind({});
 Link.args = {
   type: ButtonType.link,
-  label: ButtonType.primary,
+  label: ButtonType.link,
 };

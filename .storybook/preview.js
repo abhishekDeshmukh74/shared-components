@@ -1,4 +1,5 @@
 import { ConfigProvider } from 'antd';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { LIGHT_THEME } from '../src/theme';
 
 export const parameters = {
@@ -13,16 +14,17 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
 }
 
 
 export const decorators = [
   (Story) => (
     <div style={{
-      height: '90vh',
       display: 'flex',
       justifyContent: 'center',
-      alignItems: 'center',
     }}>
       <ConfigProvider
         theme={{

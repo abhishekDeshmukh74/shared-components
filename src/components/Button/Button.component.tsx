@@ -18,8 +18,8 @@ export enum ButtonType {
 export default function Button({
   type,
   label,
-  loading = false,
-  disabled = false,
+  loading,
+  disabled,
   onClick,
 }: ButtonProps) {
   return (
@@ -33,5 +33,11 @@ Button.propTypes = {
   type: oneOf<ButtonType>([ButtonType.primary, ButtonType.link]).isRequired,
   label: string.isRequired,
   loading: bool,
+  disabled: bool,
   onClick: func,
+};
+
+Button.defaultProps = {
+  loading: false,
+  disabled: false,
 };
