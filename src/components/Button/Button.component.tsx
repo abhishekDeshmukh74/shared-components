@@ -1,24 +1,13 @@
 import { Button as AntButton } from 'antd';
+import { MouseEvent } from 'react';
 import { func, oneOf, string, bool } from 'prop-types';
 
 export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
   type: 'primary' | 'link';
-  /**
-  /**
-   * Button contents
-   */
   label: string;
-  /**
-   * 	Set the loading status of button
-   */
   loading?: boolean;
-  /**
-   * Optional click handler to handle click event
-   */
-  onClick?: (event: MouseEvent) => void;
+  disabled?: boolean;
+  onClick?: (e: MouseEvent<HTMLInputElement>) => void;
 }
 
 export enum ButtonType {
@@ -26,13 +15,15 @@ export enum ButtonType {
   link = 'link',
 }
 
-export default function Button({ type, label, loading, onClick }: ButtonProps) {
+export default function Button({
+  type,
+  label,
+  loading = false,
+  disabled = false,
+  onClick,
+}: ButtonProps) {
   return (
-    <AntButton
-      type={type}
-      loading={loading}
-      // onclick={onclick}
-    >
+    <AntButton type={type} loading={loading} onClick={onClick} disabled={disabled}>
       {label}
     </AntButton>
   );

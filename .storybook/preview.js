@@ -25,12 +25,6 @@ export const decorators = [
       alignItems: 'center',
     }}>
       <ConfigProvider
-        style={{
-          height: '90vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
         theme={{
           token: LIGHT_THEME
         }}

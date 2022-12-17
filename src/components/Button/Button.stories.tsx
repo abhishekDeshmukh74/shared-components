@@ -7,10 +7,13 @@ export default {
   argTypes: {
     type: {
       description: 'Type of the button',
-      control: {},
     },
     label: {
       description: 'Label of the button',
+    },
+    onClick: {
+      description: 'on button click handler',
+      action: 'clicked'
     },
   },
   parameters: {
@@ -28,13 +31,6 @@ export const Primary = Template.bind({});
 Primary.args = {
   type: ButtonType.primary,
   label: ButtonType.primary,
-};
-Primary.parameters = {
-  docs: {
-    description: {
-      story: 'Some story **markdown**',
-    },
-  },
 };
 
 export const Link = Template.bind({});
