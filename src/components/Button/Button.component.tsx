@@ -1,5 +1,5 @@
 import { Button as AntButton } from 'antd';
-import { exact, func, InferProps, oneOf, shape, string, bool } from 'prop-types';
+import { func, oneOf, string, bool } from 'prop-types';
 
 export interface ButtonProps {
   /**

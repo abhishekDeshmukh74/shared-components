@@ -1,3 +1,6 @@
+import { ConfigProvider } from 'antd';
+import { LIGHT_THEME } from '../src/theme';
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   options: {
@@ -11,3 +14,29 @@ export const parameters = {
     },
   },
 }
+
+
+export const decorators = [
+  (Story) => (
+    <div style={{
+      height: '90vh',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}>
+      <ConfigProvider
+        style={{
+          height: '90vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+        theme={{
+          token: LIGHT_THEME
+        }}
+      >
+        <Story />
+      </ConfigProvider>
+    </div>
+  ),
+];
